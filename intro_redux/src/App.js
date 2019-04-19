@@ -1,14 +1,17 @@
-import React from 'react'
-import { connect } from 'react-redux'
-import { addGun, removeGun, addGunAsync } from './index.redux'
+import React from "react";
+import { connect } from "react-redux";
+import { addGun, removeGun, addGunAsync } from "./index.redux";
 
 // 装饰器模式
 @connect(
-  state=>({ num: state}),
-  {addGun, removeGun, addGunAsync}
+  // mapStates:把state映射到props 的 num上
+  state => ({ num: state }),
+  // mapActions：把action映射到props的方法上
+  { addGun, removeGun, addGunAsync }
 )
-class App extends React.Component{
-  render(){
+class App extends React.Component {
+  // 可以直接调用 state 和 action
+  render() {
     // num addGun，removeGun，addGunAsync都是connect给的，不需要手动dispatch
     return (
       <div>
@@ -17,7 +20,7 @@ class App extends React.Component{
         <button onClick={this.props.removeGun}>上交武器</button>
         <button onClick={this.props.addGunAsync}>拖两天再给</button>
       </div>
-    ) 
+    );
   }
 }
 export default App;
