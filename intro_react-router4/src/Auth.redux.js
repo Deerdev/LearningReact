@@ -16,12 +16,13 @@ export function auth(state=initState,action){
 		case LOGOUT:
 			return {...state, isAuth:false}
 		case USER_DATA:
+			// 参数 res.data 在 action.payload 中
 			return {...state, user:action.payload.user,age:action.payload.age}
 		default:	
 			return state	
 	}
 }
-// action
+// 异步action
 export function getUserData(){
 	// dispatch用来通知数据修改
 	return dispatch=>{

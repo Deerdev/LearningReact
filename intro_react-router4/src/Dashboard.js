@@ -25,6 +25,7 @@ class Dashboard extends React.Component {
           <button onClick={this.props.logout}>注销</button>
         ) : null}
         <ul>
+          {/* Link 跳转到指定路由 */}
           <li>
             <Link to={`${match.url}/`}>一营</Link>
           </li>
@@ -35,6 +36,7 @@ class Dashboard extends React.Component {
             <Link to={`${match.url}/qibinglian`}>骑兵连</Link>
           </li>
         </ul>
+        {/* Router 路由对应渲染的模板 */}
         {/* exact 完全匹配，不然匹配完 "/"" 路径，还是会匹配后面的 "/xxx" 路径 */}
         <Route path={`${match.url}/`} exact component={App} />
         <Route path={`${match.url}/erying`} component={Erying} />

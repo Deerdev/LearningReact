@@ -18,7 +18,8 @@ class Auth extends React.Component{
 	// 	}
 	// }
 	componentDidMount() {
-		this.props.getUserData()
+		// 异步action，请求数据
+		// this.props.getUserData()
 		// axios.get('/data')
 		// 	.then(res=>{
 		// 		if (res.status===200) {
