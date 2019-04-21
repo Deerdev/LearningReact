@@ -54,13 +54,13 @@ export const onSendMsg = ({ from, to, msg }) => {
 };
 
 // 异步发送: 消息已读
-export const onReadMsg = ({ from }) => {
+export const onReadMsg = ({ to }) => {
   return (dispatch, getState) => {
     // socket.emit('readMsg', { from, to });
-    readMsg(from, (data)=>{
+    readMsg(to, (data)=>{
       const userid = getState().user._id
       console.log("---",data)
-      dispatch(msgRead({userid, from, num:data.num}))
+      dispatch(msgRead({userid, to, num:data.num}))
     })
   };
 };

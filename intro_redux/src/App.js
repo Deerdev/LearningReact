@@ -23,4 +23,11 @@ class App extends React.Component {
     );
   }
 }
+// connect 的本质写法
+// 把App包裹成一个新的高阶组件 返回
+App = connect(
+  state => ({ num: state }),
+  { addGun, removeGun, addGunAsync }
+)(App)
+
 export default App;
