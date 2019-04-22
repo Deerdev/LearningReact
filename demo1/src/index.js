@@ -1,12 +1,11 @@
-import React from 'react'
-import ReactDom from 'react-dom'
+import React from "react";
+import ReactDom from "react-dom";
 
 // import MediaQuery from 'react-responsive';
-import App from './app';
+import App from "./app";
 
-import './config'
-import './index.css'
-
+import "./config";
+import "./index.css";
 
 const Pc = () => <p>抱歉，本应用不支持PC端访问，请切换移动端浏览</p>;
 
@@ -19,5 +18,5 @@ const Pc = () => <p>抱歉，本应用不支持PC端访问，请切换移动端�
 // 	document.getElementById('root')
 // )
 
-ReactDom.render(<App />, document.getElementById('root'));
-
+ReactDom.hydrate(<App />, document.getElementById("root"));
+// ReactDom.render(<h1>test</h1>, document.getElementById("root"));
