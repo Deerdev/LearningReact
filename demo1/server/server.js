@@ -3,7 +3,8 @@
 import csshook from "css-modules-require-hook/preset"; // import hook before routes
 import assethook from "asset-require-hook";
 assethook({
-  extensions: ["jpg", "jpeg", "png"]
+  extensions: ["jpg", "jpeg", "png"],
+  limit: 10000
 });
 
 // 安装babel后，支持es6 和 jsx
